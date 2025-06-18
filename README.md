@@ -37,11 +37,11 @@ Database	MongoDB (via Mongoose)
 Hosting	Vercel (Frontend), Render (Backend)
 
 🚀 Live Demo
-Frontend (User Interface): money-exchange-frontend.vercel.app
+Frontend (User Interface):[ money-exchange](https://money-exchange-frontend-rose.vercel.app/)
 
-Admin Panel: money-exchange-frontend.vercel.app/admin
+Admin Panel: [admin panedl](https://money-exchange-frontend-rose.vercel.app/admin)
 
-Backend API Server: currency-rate-cwtr.onrender.com
+Backend API Server: [buy-rate](https://currency-rate-cwtr.onrender.com/api/buy_rate)
 
 ⚠️ Notes
 The current version is not fully responsive and may not display optimally on mobile devices.
