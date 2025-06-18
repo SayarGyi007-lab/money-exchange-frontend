@@ -1,30 +1,50 @@
-React + Vite Money Exchange Website
+💱 Money Exchange Web Application
+Built with React + Vite | Express + Node.js | MongoDB
 
-This is a money exchange platform built with React (Vite) for the frontend and Express + Node.js for the backend. The application allows users to view and interact with live buy and sell currency rates.
+This project is a full-stack money exchange platform designed to streamline currency conversion and user payment processing. The system consists of a React + Vite frontend, a Node.js + Express backend, and MongoDB for persistent data storage.
 
-Users can:
+🌐 Key Features
+👥 User Interface
+View live buy and sell exchange rates for various currencies.
 
-Select the amount they want to exchange
+Input desired amount to exchange.
 
-Choose payment methods based on the selected currency
+Select payment methods dynamically based on the selected "from" currency.
 
-Upload a money transfer slip after completing a transaction
+Upload a payment slip after transferring money to confirm transactions.
 
-Admins have access to a dedicated admin panel where they can:
+Fully connected to backend services via RESTful APIs.
 
-Add or update currency rates
+🔐 Admin Panel
+Accessible at a dedicated route: /admin (No password required yet).
 
-Manage available currencies and payment methods
+Perform full CRUD operations:
 
-Review uploaded money slips and user information
+Add/edit/delete currency rates.
 
-Admins have full control over the system's rates, payment options, and user data. All information is securely stored in MongoDB.
+Add/edit/delete currencies and payment methods.
 
-Live Links:
+View uploaded payment slips along with associated user information.
 
-Backend Server: currency-rate-cwtr.onrender.com
+Enables complete control over system configuration and user transactions.
 
-Frontend (User) App: [money-exchange-frontend](https://money-exchange-frontend-rose.vercel.app/)
+🧰 Tech Stack
+Layer	Technologies
+Frontend	React, Vite, Tailwind CSS (optional styling)
+Backend	Node.js, Express.js
+Database	MongoDB (via Mongoose)
+Hosting	Vercel (Frontend), Render (Backend)
 
-Admin Panel: Admin Page(https://money-exchange-frontend-rose.vercel.app/admin)
-(Note: The admin panel currently does not require a password.)
+🚀 Live Demo
+Frontend (User Interface): money-exchange-frontend.vercel.app
+
+Admin Panel: money-exchange-frontend.vercel.app/admin
+
+Backend API Server: currency-rate-cwtr.onrender.com
+
+⚠️ Notes
+The current version is not fully responsive and may not display optimally on mobile devices.
+
+Authentication is not implemented yet — Admin panel is publicly accessible.
+
+This is an MVP (Minimum Viable Product) version and planned features like responsive layout, authentication, and user dashboards can be added in future updates.
