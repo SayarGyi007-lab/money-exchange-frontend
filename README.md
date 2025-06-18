@@ -25,5 +25,5 @@ Backend Server: currency-rate-cwtr.onrender.com
 
 Frontend (User) App: [money-exchange-frontend](https://money-exchange-frontend-rose.vercel.app/)
 
-Admin Panel: Admin Page
+Admin Panel: Admin Page(https://money-exchange-frontend-rose.vercel.app/admin)
 (Note: The admin panel currently does not require a password.)
