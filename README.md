@@ -1,6 +1,6 @@
-#💱 Money Exchange Web Application
+# 💱 Money Exchange Web Application
 
-Built with React + Vite | Express + Node.js | MongoDB
+## Built with React + Vite | Express + Node.js | MongoDB
 
 This project is a full-stack money exchange platform designed to streamline currency conversion and user payment processing. The system consists of a React + Vite frontend, a Node.js + Express backend, and MongoDB for persistent data storage.
 
