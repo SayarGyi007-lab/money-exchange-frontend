@@ -19,7 +19,7 @@ export default function PaymentUpdate() {
 
   const handleChange = e => {
     const { name, value } = e.target
-    setForm(prev => ({ ...prev, [name]: value }))
+    setForm(prev => ({ ...prev, [name]: value.toUpperCase() }))
   }
 
   const handleFileChange = e => setQrImage(e.target.files[0])
@@ -46,9 +46,19 @@ export default function PaymentUpdate() {
           <h3 className="text-md font-medium mb-2">Payment Details</h3>
 
           <input type="text" name="accountName" value={form.accountName} onChange={handleChange} placeholder="Account Name" className="w-full border p-2 rounded mb-3" required />
-          <input type="text" name="accountNumber" value={form.accountNumber} onChange={handleChange} placeholder="Account Number" className="w-full border p-2 rounded mb-3" required />
+          <input type="number" name="accountNumber"  value={form.accountNumber} onChange={handleChange} placeholder="Account Number"  className="w-full border p-2 rounded mb-3" required
+            onWheel={e => e.currentTarget.blur()}   // disable mouse wheel
+            onKeyDown={e => {                      // disable up/down arrow keys
+              if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+                e.preventDefault();
+              }
+            }}
+            style={{ MozAppearance: "textfield" }}  // hide Firefox spinner arrows
+          />
           <input type="text" name="bankName" value={form.bankName} onChange={handleChange} placeholder="Bank Name" className="w-full border p-2 rounded mb-3" required />
           <input type="file" name="qrImageUrl" onChange={handleFileChange} accept="image/*" className="w-full border p-2 rounded mb-3" />
+
+          
         </div>
 
         <button type="submit" disabled={updatingPayment} className="w-full py-2 bg-blue-600 text-white rounded hover:opacity-90 mb-2">

@@ -35,7 +35,9 @@ export default function CurrencyUpdate() {
         <h2 className="text-xl font-semibold text-center">Edit/Add Currency</h2>
 
         <div>
-          <h3 className="text-md font-medium mb-2">Currency Rates</h3>
+          <h3 className="text-md font-medium mb-2 text-center">Currency Rates</h3>
+          <p className='text-md text-red-500 mb-2 text-center'>Base currency is MMK. Please use this formula (1/MMK according to exchange rate)</p>
+          <p className='text-md text-red-500 mb-2 text-center'>If 1 USD = 5000 MMK,<br/> <span className='font-medium'> buy rate/sell rate = (1/5000)</span> </p>
 
           <label className="block text-sm mb-1" htmlFor="currency">Currency Code</label>
           <input id="currency" value={form.currency} onChange={onChange('currency')} placeholder="e.g. USD" className="w-full border p-2 rounded mb-3" required />

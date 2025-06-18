@@ -67,7 +67,7 @@ function RecordUser() {
       <p className='text-red-500 text-md text-center'> Please fill the bank to transfer money</p>
       {[
         { name: "bankOwnerName", label: "Bank Owner Name" },
-        { name: "accountNumber", label: "Account Number" },
+        { name: "accountNumber", label: "Account Number", type: "number" },
         { name: "bankName", label: "Bank Name" },
         { name: "fromCurrency", label: "From Currency" },
         { name: "toCurrency", label: "To Currency" },
@@ -89,6 +89,19 @@ function RecordUser() {
             placeholder={label}
             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-400"
             required
+
+            {...(type === "number"
+              ? {
+                  onWheel: e => e.currentTarget.blur(),
+                  onKeyDown: e => {
+                    if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+                      e.preventDefault();
+                    }
+                  },
+                  style: { MozAppearance: "textfield" }
+                }
+              : {}
+            )}
           />
         </div>
       ))}
