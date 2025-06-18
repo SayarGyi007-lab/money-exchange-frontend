@@ -28,7 +28,7 @@ function RecordUser() {
   }, [userData, navigate])
 
   const handleChange = (e) => {
-    setFromFields({ ...formFields, [e.target.name]: e.target.value })
+    setFromFields({ ...formFields, [e.target.name]: e.target.value.toUpperCase() })
   }
 
   const handleFileChange = (e) => {
