@@ -1,12 +1,29 @@
-# React + Vite
+React + Vite Money Exchange Website
+This is a money exchange platform built with React (Vite) for the frontend and Express + Node.js for the backend. The application allows users to view and interact with live buy and sell currency rates.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Users can:
 
-Currently, two official plugins are available:
+Select the amount they want to exchange
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Choose payment methods based on the selected currency
 
-## Expanding the ESLint configuration
+Upload a money transfer slip after completing a transaction
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Admins have access to a dedicated admin panel where they can:
+
+Add or update currency rates
+
+Manage available currencies and payment methods
+
+Review uploaded money slips and user information
+
+Admins have full control over the system's rates, payment options, and user data. All information is securely stored in MongoDB.
+
+Live Links:
+
+Backend Server: currency-rate-cwtr.onrender.com
+
+Frontend (User) App: [money-exchange-frontend](https://money-exchange-frontend-rose.vercel.app/)
+
+Admin Panel: Admin Page
+(Note: The admin panel currently does not require a password.)
