@@ -31,7 +31,7 @@ Enables complete control over system configuration and user transactions.
 
 🧰 Tech Stack
 Layer	Technologies
-Frontend	React, Vite, Tailwind CSS (optional styling)
+Frontend	React, Vite, Tailwind CSS 
 Backend	Node.js, Express.js
 Database	MongoDB (via Mongoose)
 Hosting	Vercel (Frontend), Render (Backend)
@@ -43,8 +43,6 @@ Admin Panel: [admin panel](https://money-exchange-frontend-rose.vercel.app/admin
 
 Backend API Server: [buy-rate](https://currency-rate-cwtr.onrender.com/api/buy_rate)
 
-⚠️ Notes
-The current version is not fully responsive and may not display optimally on mobile devices.
 
 Authentication is not implemented yet — Admin panel is publicly accessible.
 
