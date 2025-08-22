@@ -1,76 +1,72 @@
-
-
-
 import React from 'react'
 import getAllRateFetch from '../../hooks/rates/getAllRatesFetch'
 import { useNavigate } from 'react-router-dom'
-import CurrencyRow from './CurrencyRow' // We'll create this component next
+import CurrencyRow from './CurrencyRow'
 import { handleDeleteCurrency } from '../../hooks/rates/deleteCurrency'
 
 function HomePage() {
   const navigate = useNavigate()
   const { loading, error, rate, setRate } = getAllRateFetch()
 
-  const UpdateRatesHandler = () => {
-    navigate("/admin/update-rates")
-  }
+  const UpdateRatesHandler = () => navigate("/admin/update-rates")
+  const CheckPaymentHandler = () => navigate("/admin/check-payments")
 
-  const CheckPaymentHandler = () => {
-    navigate("/admin/check-payments")
-  }
-
-  const handleDelete= async(currency)=>{
+  const handleDelete = async (currency) => {
     const success = await handleDeleteCurrency(currency)
-    if(success){
+    if (success) {
       setRate(prev => prev.filter(item => item.currency !== currency))
     }
   }
 
   return (
-    <div className='bg-orange-100 flex h-[100vh] justify-center items-center'>
-      <div className='max-w-7xl mx-auto rounded-lg'>
-        <h1 className='text-center font-bold text-2xl p-4'>💱 Exchange Rates to MMK</h1>
-
-        {loading && <p className='text-gray-600 text-center'>Loading Exchange Rates…</p>}
-        {error && <p className='text-red-500 text-center'>{error}</p>}
-
-        <div className="overflow-x-auto max-h-[70vh] overflow-y-scroll rounded-lg shadow">
-        {!loading && !error && (
-          <table className='border border-separate table-auto w-full border-gray-500 bg-white rounded-lg'>
-            <thead className='bg-cyan-300 sticky top-0 z-10'>
-              <tr>
-                <th className='p-3 border'>Currency</th>
-                <th className='p-3 border'>Buy Rate</th>
-                <th className='p-3 border'>Sell Rate</th>
-                <th className='p-3 border'>Updated At</th>
-                <th className='p-3 border'>Bank</th>
-                <th className='p-3 border'>QR</th>
-                <th className='p-3 border'>Delete Currency</th>
-              </tr>
-            </thead>
-            <tbody>
-              {Array.isArray(rate) && rate
-                .filter(data => data.currency )
-                .map(data => (
-                  <CurrencyRow key={data._id} data={data} onDelete={handleDelete} />
-                ))
-              }
-            </tbody>
-          </table>
-        )
-        }
+    <div className="min-h-screen bg-orange-200 flex flex-col items-center p-4">
+      <div className="w-full max-w-7xl bg-white shadow-2xl rounded-2xl overflow-hidden flex flex-col">
+        
+        {/* Header */}
+        <div className="bg-gradient-to-r from-cyan-400 to-cyan-500 text-white py-6 px-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-center">💱 Exchange Rates to MMK</h1>
         </div>
 
-        <div className='flex items-center justify-center gap-10 p-4'>
+        {/* Table */}
+        <div className="flex-1 overflow-x-auto overflow-y-auto max-h-[70vh]">
+          {loading && (
+            <p className="text-gray-600 text-center py-6 animate-pulse">
+              Loading Exchange Rates…
+            </p>
+          )}
+          {error && (
+            <p className="text-red-500 text-center py-6">{error}</p>
+          )}
+          {!loading && !error && (
+            <table className="table-auto w-full text-sm md:text-base border-collapse">
+              <thead className="sticky top-0 bg-cyan-300 text-gray-800 shadow-md">
+                <tr>
+                  {["Currency", "Buy Rate", "Sell Rate", "Updated At", "Bank", "QR", "Delete"].map((head) => (
+                    <th key={head} className="px-3 py-4 border text-left">{head}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {Array.isArray(rate) && rate
+                  .filter(data => data.currency)
+                  .map(data => (
+                    <CurrencyRow key={data._id} data={data} onDelete={handleDelete} />
+                  ))}
+              </tbody>
+            </table>
+          )}
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex flex-wrap gap-4 justify-center p-6 bg-orange-50">
           <button
-            className='border rounded-md p-3 bg-green-300 hover:shadow-lg hover:scale-105 transition duration-300'
+            className="px-5 py-3 rounded-xl bg-gradient-to-r from-green-400 to-green-500 text-white font-semibold shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-300"
             onClick={UpdateRatesHandler}
           >
             Update Rates
           </button>
-
           <button
-            className='border rounded-md p-3 bg-green-300 hover:shadow-lg hover:scale-105 transition duration-300'
+            className="px-5 py-3 rounded-xl bg-gradient-to-r from-blue-400 to-blue-500 text-white font-semibold shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-300"
             onClick={CheckPaymentHandler}
           >
             Check Payment

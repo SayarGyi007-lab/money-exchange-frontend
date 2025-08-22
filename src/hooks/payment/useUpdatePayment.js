@@ -10,7 +10,7 @@ const useUpdatePayment = () => {
       try {
         const response = await fetch("https://currency-rate-cwtr.onrender.com/payment/update", {
           method: "POST",
-          body: formData,  // send FormData directly, do NOT set Content-Type header here
+          body: formData,  
         });
   
         const data = await response.json();
@@ -20,7 +20,7 @@ const useUpdatePayment = () => {
           return false;
         }
   
-        return true;  // or return data if you want
+        return true; 
       } catch (error) {
         setErrorPaymentUpdate("Error at updating payment");
         return false;

@@ -9,40 +9,56 @@ function Pending() {
   const { userData, loading, error } = useGetUser(userId)
 
   return (
-    <div className="bg-orange-100 min-h-screen flex flex-col items-center justify-center px-4 py-10">
-      {loading && (
-        <p className="text-gray-600 text-center">Loading User Payments…</p>
-      )}
-      {error && (
-        <p className="text-red-500 text-center">{error}</p>
-      )}
-      {!loading && !error && !userData && (
-        <p className="text-center text-gray-700">No user payment data found.</p>
-      )}
-      {userData && (
-        <div className="max-w-xl w-full bg-white rounded-2xl p-6 shadow-md border border-orange-300">
-          <h2 className="text-2xl font-semibold mb-4 text-orange-600 text-center">User Payment Details</h2>
-          <div className="space-y-3 text-gray-700">
-            <p><strong>Bank Owner Name:</strong> {userData.bank.bankOwnerName}</p>
-            <p><strong>Account Number:</strong> {userData.bank.accountNumber}</p>
-            <p><strong>Bank Name:</strong> {userData.bank.bankName}</p>
-            <p><strong>From Currency:</strong> {userData.fromCurrency.toUpperCase()}</p>
-            <p><strong>To Currency:</strong> {userData.toCurrency.toUpperCase()}</p>
-            <p><strong>Amount:</strong> {userData.amount.toLocaleString()}</p>
-            <p>
-              <strong>Status:</strong>{' '}
-              {userData.paymentStatus === 'received'
-                ? '✅ Payment has been received.'
-                : userData.paymentStatus === 'not-received'
-                  ? '🚫 Payment has not been received.'
-                : userData.paymentStatus === 'transferred'
-                    ? '🔄 Payment has been transferred.'
-                : userData.paymentStatus}
-            </p>
+    <div className="bg-orange-50 min-h-screen flex flex-col items-center py-10 px-4">
+      <div className="max-w-3xl w-full">
+        <h1 className="text-3xl font-bold text-green-600 text-center mb-8">
+          Pending Payment
+        </h1>
 
+        {loading && (
+          <div className="bg-white shadow-md rounded-2xl p-6 text-center text-gray-600 border border-orange-200">
+            Loading User Payments…
           </div>
-        </div>
-      )}
+        )}
+
+        {error && (
+          <div className="bg-white shadow-md rounded-2xl p-6 text-center text-red-500 border border-orange-200">
+            {error}
+          </div>
+        )}
+
+        {!loading && !error && !userData && (
+          <div className="bg-white shadow-md rounded-2xl p-6 text-center text-gray-700 border border-orange-200">
+            No user payment data found.
+          </div>
+        )}
+
+        {userData && (
+          <div className="bg-white shadow-lg rounded-2xl p-8 border border-orange-300">
+            <h2 className="text-2xl font-semibold mb-6 text-green-600 text-center">
+              User Payment Details
+            </h2>
+            <div className="space-y-4 text-gray-700">
+              <p><strong>Bank Owner Name:</strong> {userData.bank.bankOwnerName}</p>
+              <p><strong>Account Number:</strong> {userData.bank.accountNumber}</p>
+              <p><strong>Bank Name:</strong> {userData.bank.bankName}</p>
+              <p><strong>From Currency:</strong> {userData.fromCurrency.toUpperCase()}</p>
+              <p><strong>To Currency:</strong> {userData.toCurrency.toUpperCase()}</p>
+              <p><strong>Amount:</strong> {userData.amount.toLocaleString()}</p>
+              <p>
+                <strong>Status:</strong>{' '}
+                {userData.paymentStatus === 'received'
+                  ? '✅ Payment has been received.'
+                  : userData.paymentStatus === 'not-received'
+                    ? '🚫 Payment has not been received.'
+                  : userData.paymentStatus === 'transferred'
+                    ? '🔄 Payment has been transferred.'
+                  : userData.paymentStatus}
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   )
 }
