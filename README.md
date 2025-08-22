@@ -1,12 +1,51 @@
-# React + Vite
+# 💱 Money Exchange Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Built with React + Vite | Express + Node.js | MongoDB
 
-Currently, two official plugins are available:
+This project is a full-stack money exchange platform designed to streamline currency conversion and user payment processing. The system consists of a React + Vite frontend, a Node.js + Express backend, and MongoDB for persistent data storage.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🌐 Key Features
+👥 User Interface
+View live buy and sell exchange rates for various currencies.
 
-## Expanding the ESLint configuration
+Input desired amount to exchange.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Select payment methods dynamically based on the selected "from" currency.
+
+Upload a payment slip after transferring money to confirm transactions.
+
+Fully connected to backend services via RESTful APIs.
+
+🔐 Admin Panel
+Accessible at a dedicated route: /admin (No password required yet).
+
+Perform full CRUD operations:
+
+Add/edit/delete currency rates.
+
+Add/edit/delete currencies and payment methods.
+
+View uploaded payment slips along with associated user information.
+
+Enables complete control over system configuration and user transactions.
+
+🧰 Tech Stack
+Layer	Technologies
+Frontend	React, Vite, Tailwind CSS (optional styling)
+Backend	Node.js, Express.js
+Database	MongoDB (via Mongoose)
+Hosting	Vercel (Frontend), Render (Backend)
+
+🚀 Live Demo
+Frontend (User Interface):[ money-exchange](https://money-exchange-frontend-rose.vercel.app/)
+
+Admin Panel: [admin panedl](https://money-exchange-frontend-rose.vercel.app/admin)
+
+Backend API Server: [buy-rate](https://currency-rate-cwtr.onrender.com/api/buy_rate)
+
+⚠️ Notes
+The current version is not fully responsive and may not display optimally on mobile devices.
+
+Authentication is not implemented yet — Admin panel is publicly accessible.
+
+This is an MVP (Minimum Viable Product) version and planned features like responsive layout, authentication, and user dashboards can be added in future updates.
