@@ -39,7 +39,7 @@ Hosting	Vercel (Frontend), Render (Backend)
 🚀 Live Demo
 Frontend (User Interface):[ money-exchange](https://money-exchange-frontend-rose.vercel.app/)
 
-Admin Panel: [admin panedl](https://money-exchange-frontend-rose.vercel.app/admin)
+Admin Panel: [admin panel](https://money-exchange-frontend-rose.vercel.app/admin)
 
 Backend API Server: [buy-rate](https://currency-rate-cwtr.onrender.com/api/buy_rate)
 
